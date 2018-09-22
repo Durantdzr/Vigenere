@@ -4,6 +4,7 @@
 - Vigenere.py:主程序
 - weijiniya.py:维吉尼亚密码的加密解密部分
 - jiemian:由qt制作转化的文件
+-----------
 ##程序界面
 ![](jiemian.PNG)
 
