@@ -12,16 +12,17 @@ class mywindow(QtWidgets.QWidget, Ui_Vigenere):
         self.count = 0
         self.setupUi(self)
 
+    # 定义槽函数
     def jiami(self):
-        Secret = self.WJNY.jiami(self.MingWord.text(), self.Key.text())
+        Secret = self.WJNY.jiami(self.MingWord.text().lower(), self.Key.text().lower())
         self.SecretWord.setText(Secret)
         self.Record.append('本次加密，明文为' + self.MingWord.text() + '，秘钥为' + self.Key.text() + '，密文为' + Secret)
 
     # 定义槽函数
     def jiemi(self):
-        Ming = self.WJNY.jiemi(self.SecretWord.text(), self.Key.text())
+        Ming = self.WJNY.jiemi(self.SecretWord.text().lower(), self.Key.text().lower())
         self.MingWord.setText(Ming)
-        self.Record.append('本次解密，密文为' + self.MingWord.text() + '，秘钥为' + self.Key.text() + '，明文为' + Ming)
+        self.Record.append('本次解密，密文为' + self.SecretWord.text() + '，秘钥为' + self.Key.text() + '，明文为' + Ming)
 
 
 app = QtWidgets.QApplication(sys.argv)
